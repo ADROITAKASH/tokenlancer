@@ -81,8 +81,9 @@ function Menus() {
 
             <div className="menus__bottom">
                 <span>
-                    <h4> My Projects</h4>
-                    <h4 className="menus__bottom--isActive"> Dashboard</h4>
+                    <h4><Link to="/project-feed"> Project Feed </Link></h4>
+                    <h4 className="menus__bottom--isActive"><Link to="/dashboard"> Dashboard </Link> </h4>
+                    <h4><Link to="/my-Projects"> My Projects </Link> </h4>
                     <h4> Inbox</h4>
                     <h4> Feedback</h4>
                     <h4> Free Credit</h4>

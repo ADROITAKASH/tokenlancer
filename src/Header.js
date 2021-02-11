@@ -13,8 +13,6 @@ function Header() {
                         alt="logo"
                     />
                 </Link>
-                <h4>How It Works</h4>
-                <h4>Browse Jobs</h4>
             </div>
 
             <div className="header__right">

@@ -25,8 +25,6 @@ function Projects() {
                     title="Logo Design"
                     price="From $50 USD"
                 />
-            </div>
-            <div className="projects__project">
                 <Project
                     src="https://image.freepik.com/free-photo/marketing-strategy-connting-digital-devices-concept_53876-23053.jpg"
                     title="Marketing"

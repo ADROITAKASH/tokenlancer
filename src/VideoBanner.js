@@ -9,14 +9,12 @@ function VideoBanner() {
                 <h4>
                     Time is the wisest counselor of all
                 </h4>
-                <span className='buttons'>
                     <button className="videoBanner__info--first">
-                        Hire a TokenLancer
+                        Hire TokenLancer
                 </button>
                     <button className="videoBanner__info--second">
-                        Become a TokenLancer
+                        Become TokenLancer
                 </button>
-                </span>
             </div>
 
         </div>
