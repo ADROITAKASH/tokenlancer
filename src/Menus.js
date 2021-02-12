@@ -1,14 +1,11 @@
 import React from 'react';
 import './Menus.css';
 import { Link, useHistory } from 'react-router-dom';
-import SearchIcon from '@material-ui/icons/Search';
-import DesktopWindowsIcon from '@material-ui/icons/DesktopWindows';
-import SmsIcon from '@material-ui/icons/Sms';
-import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Avatar } from '@material-ui/core';
-import { useStateValue } from '../StateProvider';
-import { auth } from '../firebase';
+// import { Avatar } from '@material-ui/core';
+import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
@@ -32,30 +29,29 @@ function Menus() {
         if (user) {
             auth.signOut();
         }
-        history.push("/login");
+        history.push("/");
     }
 
     return (
         <div className="menus">
             <div className="menus__top">
                 <div className="menus__top--left">
-                    <Link to="/dashboard">
-                        <img
-                            className="header__logo"
-                            src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
-                            alt="logo"
-                        />
+                    <Link to="/">
+                    <img
+                        className="header__logo"
+                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
+                        alt="logo"
+                    />
                     </Link>
-                    <SearchIcon /> <h5>Browse</h5>
-                    <DesktopWindowsIcon /> <h5>My&nbsp;Projects</h5>
-                    <SmsIcon /> <h5>Messages</h5>
-                    <NotificationsNoneIcon /><h5>Updates</h5>
-                    <button> Post a Project</button>
+                    <span className="menu">
+                        <h4><Link to="/my-Projects">Inbox</Link> </h4>
+                        <h4 className="pad"><Link to="/my-Projects">Notification</Link> </h4>
+                    </span>
 
                 </div>
 
                 <div className="menus__top--right">
-                    <Avatar src={user.photoURL ? user.photoURL : "http://dipendrachand.com.np/images/profilepic.jpg"} />
+                    {/* <Avatar src={user.photoURL ? user.photoURL : "http://dipendrachand.com.np/images/profilepic.jpg"} /> */}
                     <span>
                         {/* <h4>{user?.email}</h4> */}
                         <h4>{user?.email ? user?.email : 'chand.dipendra19@gmail.com'}</h4>
@@ -73,7 +69,6 @@ function Menus() {
                         TransitionComponent={Fade}
                     >
                         <MenuItem onClick={handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={handleClose}>My Account</MenuItem>
                         <MenuItem onClick={handleAuthentication}>Logout</MenuItem>
                     </Menu>
                 </div>
@@ -81,14 +76,14 @@ function Menus() {
 
             <div className="menus__bottom">
                 <span>
-                    <h4><Link to="/project-feed"> Project Feed </Link></h4>
-                    <h4 className="menus__bottom--isActive"><Link to="/dashboard"> Dashboard </Link> </h4>
-                    <h4><Link to="/my-Projects"> My Projects </Link> </h4>
-                    <h4> Inbox</h4>
-                    <h4> Feedback</h4>
-                    <h4> Free Credit</h4>
+                    <h4><Link to="/browse-job">Browse Jobs</Link></h4>
+                    {/* className="menus__bottom--isActive" */}
+                    <h4><Link to="/my-job">My Jobs</Link> </h4>
+                    <h4><Link to="/post-Job">Post Job</Link> </h4>
+                    <h4><Link to="/recruitment">Recruitment</Link> </h4>
                 </span>
             </div>
+
         </div>
     )
 }

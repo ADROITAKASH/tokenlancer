@@ -39,7 +39,7 @@ function Login() {
                     type: actionTypes.SET_USER,
                     user: result.user,
                 });
-                history.push('/dashboard');
+                history.push('/project-feed');
             })
             .catch((error) => alert(error.message));
     };

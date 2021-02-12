@@ -11,10 +11,10 @@ function VideoBanner() {
                     Time is the wisest counselor of all
                 </h4>
                     <button className="videoBanner__info--first">
-                        Hire TokenLancer
+                    <Link to="/post-Job">Hire TokenLancer</Link>
                 </button>
                     <button className="videoBanner__info--second">
-                    <Link to="/signup">Become TokenLancer</Link>
+                    <Link to="/browse-job">Become TokenLancer</Link>
                 </button>
             </div>
 

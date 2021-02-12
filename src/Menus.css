@@ -72,16 +72,27 @@
   font-weight: 600;
 }
 
-.menus__bottom {
+/* .menus__bottom {
   background-color: #0e1724;
   color: white;
-}
+} */
 
 .menus__bottom > span {
   display: flex;
   margin-left: 70px;
   justify-content: space-between;
   max-width: 35%;
+}
+
+.menu {
+  display: flex;
+  margin-left: 70px;
+  justify-content: space-between;
+  /* max-width: 35%; */
+}
+
+.pad{
+  padding-left: 50px;
 }
 
 .menus__bottom > span > h4 {
@@ -98,6 +109,7 @@
   border-bottom: 1px solid #56c7ff;
 }
 
-link{
-  color:white;
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }

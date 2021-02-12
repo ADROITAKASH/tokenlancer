@@ -16,6 +16,7 @@ function Header() {
             </div>
 
             <div className="header__right">
+                <h4><Link to="/browse-job">Fck In</Link></h4>
                 <h4><Link to="/login">Log In</Link></h4>
                 <h4><Link to="/signup">Sign Up </Link></h4>
                 <button> Post a Project</button>
