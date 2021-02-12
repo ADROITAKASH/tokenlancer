@@ -1,6 +1,6 @@
 import React from 'react';
 import './Feed.css';
-import { CardList } from './components/cardList/cardList';
+import { ProjectList } from './components/ProjectList/ProjectList';
 import { Search } from './components/search/search'
 
 class Feed extends React.Component {
@@ -24,7 +24,7 @@ class Feed extends React.Component {
     return (
       <div className='Feed'>
         <Search placeholder='search monsters' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
-        <CardList monsters={filterdMonsters}></CardList>
+        <ProjectList monsters={filterdMonsters}></ProjectList>
       </div>
     );
   }

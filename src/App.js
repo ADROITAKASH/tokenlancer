@@ -11,7 +11,6 @@ import ProjectFeed from './ProjectFeed';
 import Login from './Login';
 import Signup from './Signup';
 import Dashboard from './admin/Dashboard';
-import Feed from './Feed'
 
 function App() {
   return (
@@ -39,7 +38,6 @@ function App() {
             <VideoBanner />
             <Features />
             <Projects />
-            <Feed />
             <Footer />
           </Route>
         </Switch>

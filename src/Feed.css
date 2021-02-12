@@ -1,5 +1,3 @@
-.Feed{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+.Feed {
+  padding: 3rem;
 }

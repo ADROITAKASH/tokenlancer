@@ -1,5 +1,6 @@
 import React from 'react';
 import './VideoBanner.css';
+import { Link } from 'react-router-dom';
 
 function VideoBanner() {
     return (
@@ -13,7 +14,7 @@ function VideoBanner() {
                         Hire TokenLancer
                 </button>
                     <button className="videoBanner__info--second">
-                        Become TokenLancer
+                    <Link to="/signup">Become TokenLancer</Link>
                 </button>
             </div>
 
