@@ -37,11 +37,11 @@ function Menus() {
             <div className="menus__top">
                 <div className="menus__top--left">
                     <Link to="/">
-                    <img
-                        className="header__logo"
-                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
-                        alt="logo"
-                    />
+                        <img
+                            className="logo"
+                            src="https://i.ibb.co/SyXXSDG/logo.png"
+                            alt="logo"
+                        />
                     </Link>
                     <span className="menu">
                         <h4><Link to="/my-Projects">Inbox</Link> </h4>

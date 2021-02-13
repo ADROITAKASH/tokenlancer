@@ -8,13 +8,13 @@ function VideoBanner() {
             <div className="videoBanner__info">
                 <h1>Hire the perfect freelancer hourly based</h1>
                 <h4>
-                    Time is the wisest counselor of all
+                    <strong>Join</strong> TokenLancer
                 </h4>
-                    <button className="videoBanner__info--first">
-                    <Link to="/post-Job">Hire TokenLancer</Link>
+                <button className="videoBanner__info--first a">
+                    <Link to="/login">Credentials Login </Link>
                 </button>
-                    <button className="videoBanner__info--second">
-                    <Link to="/browse-job">Become TokenLancer</Link>
+                <button className="videoBanner__info--second a">
+                    <Link to="/browse-job">Non Credentials Login</Link>
                 </button>
             </div>
 

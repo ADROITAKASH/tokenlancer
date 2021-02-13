@@ -7,27 +7,34 @@ class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      monsters: [],
+      jobs: [],
       search: ''
     }
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://api.jsonbin.io/b/60274bc73b303d3d964fe63f/1', {
+      method: 'GET',
+      headers: {
+        'secret-key': '$2b$10$m7Z.n9.aBJObcy8ZfKtQTey1aWzx9jxyMuijso7H2rIvuA3x4iWoG'
+      }
+    })
+      // fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(user => this.setState({ monsters: user }))
+      .then(user => this.setState({ jobs: user }))
   }
 
   render() {
-    const { monsters, search } = this.state;
-    const filterdMonsters = monsters.filter(monster => (monster.name.toLowerCase().includes(search.toLowerCase())));
+    const { jobs, search } = this.state;
+    const filterdJobs = jobs.filter(job => (job.title.toLowerCase().includes(search.toLowerCase())));
     return (
       <div className='Feed'>
-        <Search placeholder='search monsters' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
-        <ProjectList monsters={filterdMonsters}></ProjectList>
+        <Search placeholder='search jobs' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
+        <ProjectList jobs={filterdJobs}></ProjectList>
       </div>
     );
   }
 }
 
 export default Feed;
+

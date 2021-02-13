@@ -35,7 +35,9 @@
 .menus__top--left > .MuiSvgIcon-root {
   margin-left: 5px;
 }
-
+.logo{
+padding: 10px;
+}
 .menus__top--left > button {
   background-color: #fc8c14; /* Orange */
   border: none;

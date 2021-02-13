@@ -1,6 +1,6 @@
 .videoBanner {
-  background: url("https://i.ibb.co/MncSqxs/bitcoin.jpg") top right;
-  height: 600px;
+  background: url("https://i.ibb.co/MncSqxs/bitcoin.jpg") top left;
+  height: 700px;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,7 +14,7 @@
   padding-right: 80px;
   padding-bottom: 40px;
   margin-left: 50px;
-  width: 550px;
+  width: 700px;
 }
 
 .videoBanner__info > h1 {
@@ -41,10 +41,13 @@
   margin-right: 20px;
 }
 
-.videoBanner__info > .buttons {
-  /* display: flex; */
+.videoBanner__info > button {
+  border-radius: 10px;
 }
-
+.a > a {
+  color: #f7f7f7 !important;
+  font-size: 18px;
+}
 .videoBanner__info--first {
   background: #f20091;
   color: #f7f7f7;

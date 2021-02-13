@@ -1,93 +1,73 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+// import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
-import Checkbox from '@material-ui/core/Checkbox';
-import { auth, provider } from './firebase';
-import { actionTypes } from './reducer';
-import { useStateValue } from './StateProvider';
+import Header from './Header';
 
-function Login() {
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    // eslint-disable-next-line
-    const [checked, setChecked] = useState(true);
-    // eslint-disable-next-line
-    const [state, dispatch] = useStateValue();
 
-    const handleChange = (event) => {
-        setChecked(event.target.checked);
-    };
-
-    const signIn = e => {
-        e.preventDefault();
-        //some fancy firebase login...
-        auth.signInWithEmailAndPassword(email, password)
-            .then((auth) => {
-                history.push('/dashboard');
-            })
-            .catch(error => alert(error.message))
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            username: ''
+        };
     }
 
-    const signInGoogle = () => {
-        //sign in code..
-        auth
-            .signInWithPopup(provider)
-            .then((result) => {
-                //console.log(result);
-                dispatch({
-                    type: actionTypes.SET_USER,
-                    user: result.user,
-                });
-                history.push('/project-feed');
-            })
-            .catch((error) => alert(error.message));
-    };
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
 
-    return (
-        <div className="login">
-            <div className="login__form">
-                <div className="login__formTop">
-                    <Link to="/">
-                        <img src="https://www.f-cdn.com/assets/main/en/assets/freelancer-logo.svg" alt="logo" />
-                    </Link>
-                    <h4>Welcome Back</h4>
-                    <img
-                        onClick={signInGoogle}
-                        src="https://pngimage.net/wp-content/uploads/2018/06/login-with-google-png-4.png"
-                        alt="login"
-                    />
-                </div>
-                <h4> OR </h4>
-                <div className="login__formMiddle">
-                    <input type="email" placeholder="Email or Username" value={email} onChange={e => setEmail(e.target.value)} />
-                    <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-                    <h5>
-                        <Checkbox
-                            checked="false"
-                            color="primary"
-                            onClick={handleChange}
-                            inputProps={{ 'aria-label': 'secondary checkbox' }}
-                        />
-                    Remember Me
-                    <span className="login__formMiddle-space">
-                            <Link>Forgot Password?</Link>
+    handleSubmit = (event) => {
+
+        // const history = useHistory();
+        // history.push("/browse-job");
+
+        fetch('https://webhook.site/2491e7cf-0432-4f89-bd36-6c0d38cb0d57', {
+            method: 'POST',
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify(this.state)
+        }).then(function (response) {
+            console.log(response)
+            return response.json();
+        });
+
+        event.preventDefault();
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <div className='signin'>
+                    <form onSubmit={this.handleSubmit}>
+                        <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Login</h2>
+                        <button class="submit" type="submit" value="Submit"><span class="entypo-lock"><i class="fa fa-lock"></i></span></button>
+                        <span class="entypo-user inputUserIcon">
+                            <i class="fa fa-user"></i>
                         </span>
-                    </h5>
-                    <button onClick={signIn} type="submit" className="login__signInButton"> Log In</button>
-                </div>
-                <div className="login__formBottom">
-                    <hr />
-                    <h5>
-                        Don't have an account?
-                        <Link to="/signup"> Sign Up</Link>
-                    </h5>
-                    <img src="https://www.teleware.com/wp-content/uploads/2018/08/Google-play-and-istore-badges-300x104.jpg" alt="apple" />
+                        <input type="text" class="user" placeholder="Name" value={this.state.value} name="name" onChange={this.handleChange} />
+                        <span class="entypo-key inputPassIcon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <input type="text" class="pass" placeholder="Username" value={this.state.value} name="username" onChange={this.handleChange} />
+                    </form>
+                    <div class='vl'></div>
+                    <form action="">
+                        <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Signup</h2>
+                        <button class="submit"><span class="entypo-lock"><i class="fa fa-lock"></i></span></button>
+                        <span class="entypo-user inputUserIcon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <input type="text" class="user" placeholder="Name" />
+                        <span class="entypo-key inputPassIcon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <input type="text" class="pass" placeholder="Username" />
+                    </form>
                 </div>
             </div>
-
-        </div>
-    )
+        );
+    }
 }
 
-export default Login
+export default Login;

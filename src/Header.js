@@ -9,17 +9,17 @@ function Header() {
                 <Link to="/">
                     <img
                         className="header__logo"
-                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
+                        src="https://i.ibb.co/SyXXSDG/logo.png"
                         alt="logo"
                     />
                 </Link>
             </div>
 
             <div className="header__right">
-                <h4><Link to="/browse-job">Fck In</Link></h4>
+                {/* <h4><Link to="/browse-job">Fck In</Link></h4>
                 <h4><Link to="/login">Log In</Link></h4>
-                <h4><Link to="/signup">Sign Up </Link></h4>
-                <button> Post a Project</button>
+                <h4><Link to="/signup">Sign Up </Link></h4> */}
+                <button><Link to="/browse-job">Fck In</Link></button>
             </div>
 
         </div >

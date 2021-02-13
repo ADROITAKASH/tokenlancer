@@ -1,112 +1,101 @@
-.login {
-  text-align: center;
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: "entypo", sans-serif;
 }
 
-.login__form {
-  margin-left: auto;
-  margin-right: auto;
-  width: 35%;
-  margin-top: 15px;
-  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.login__formTop {
-  margin-top: 20px;
+.vl {
+  border-left: 3px solid rgb(71, 71, 71);
+  height: 500px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-.login__formTop > h4 {
-  margin-bottom: 20px;
-}
-
-.login__formTop > img {
-  height: 140px;
-  width: 370px;
-  margin-bottom: 20px;
-}
-
-.login__formTop > a > img {
-  margin-top: 50px;
-  height: 70px;
-  width: 200px;
-}
-
-.login__form > h4 {
-  margin-bottom: 20px;
-}
-
-.login__formMiddle {
+.signin {
   display: flex;
-  flex-direction: column;
-  margin: 0 35px;
-  text-align: initial;
-}
-
-.login__formMiddle > input {
-  padding: 15px;
-  margin-bottom: 10px;
-}
-
-.login__formMiddle > h5 {
-  font-weight: 500;
-}
-
-.login__formMiddle > button {
-  background-color: #007fed;
-  border: none;
-  color: white;
-  padding: 12px 18px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.login__formMiddle-space > a {
-  text-decoration: none;
-  color: blue;
-}
-
-.login__formMiddle-space > a:hover {
-  text-decoration: underline;
-}
-
-.login__formMiddle-space {
-  margin-left: 150px;
-}
-
-.login__formBottom {
-  display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  padding-top: 5%;
 }
 
-.login__formBottom > hr {
-  width: 80%;
-  margin-top: 20px;
+h2 {
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 12px;
 }
 
-.login__formBottom > h5 {
-  font-size: 30;
-  font-weight: 500;
-  margin-top: 20px;
+body {
+  background: #ffffff;
+  font-family: "Roboto", sans-serif;
 }
 
-.login__formBottom > h5 > a {
-  text-decoration: none;
-  color: blue;
+form {
+  position: relative;
+  margin: 50px auto;
+  width: 380px;
+  height: auto;
 }
 
-.login__formBottom > h5 > a:hover {
-  text-decoration: underline;
-}
-
-.login__formBottom > img {
-  display: flex;
-  flex-direction: row;
-  height: 100px;
+input {
+  padding: 16px;
+  border-radius: 7px;
+  border: 0px;
+  background: rgb(235, 235, 235);
+  display: block;
+  margin: 15px;
   width: 300px;
-  padding: 0 5px;
-  margin-bottom: 25px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  height: 54px;
+}
+
+input:focus {
+  outline-color: rgba(0, 0, 0, 0);
+  background: #F2F2F2;
+  border: .5px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.submit {
+  float: right;
+  height: 121px;
+  width: 50px;
+  border: 0px;
+  background: #e74c3c;
+  border-radius: 7px;
+  padding: 10px;
+  color: white;
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.inputUserIcon {
+  position: absolute;
+  top: 68px;
+  right: 80px;
+  color: #e74c3c;
+}
+
+.inputPassIcon {
+  position: absolute;
+  top: 136px;
+  right: 80px;
+  color: #e74c3c;
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #e74d3cb4;
 }
