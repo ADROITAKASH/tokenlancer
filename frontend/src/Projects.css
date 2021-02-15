@@ -1,8 +1,9 @@
 .projects {
   justify-content: center;
   margin-bottom: 20px;
+  /* background-color: #F2F3F7; */
   background-color: #ffffff;
-  padding: 70px;
+  /* padding: 60px; */
 }
 
 .projects__heading > h3 {

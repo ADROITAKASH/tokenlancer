@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap");
+
 * {
   margin: 0;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "monospace", "Raleway",
+  /* font-family: -apple-system, BlinkMacSystemFont, "monospace", "Raleway",
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+    "Droid Sans", "Helvetica Neue", sans-serif; */
+  font-family: "M PLUS Rounded 1c", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,4 +17,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+::-moz-selection {
+  background: #ff6f5e;
+  padding: 50px;
+  color: white;
+}
+::-webkit-selection {
+  background: #ff6f5e;
+  padding: 50px;
+  color: white;
+}
+::selection {
+  background: #ff6f5e;
+  padding: 50px;
+  color: white;
 }

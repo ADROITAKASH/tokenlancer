@@ -1,5 +1,6 @@
 .videoBanner {
-  background: url("https://i.ibb.co/MncSqxs/bitcoin.jpg") top left;
+  background: url("https://i.ibb.co/8X4xNK4/landing-pg.png") top center;
+  /* background: url("https://i.ibb.co/MncSqxs/bitcoin.jpg") top left; */
   height: 700px;
   position: relative;
   background-repeat: no-repeat;
@@ -10,24 +11,29 @@
   background-color: transparent;
   color: white;
   padding-top: 18vh;
-  padding-left: 50px;
+  padding-left: 90px;
   padding-right: 80px;
   padding-bottom: 40px;
   margin-left: 50px;
   width: 700px;
 }
 
+.strong {
+  color: #ffffff;
+  font-weight: bolder;
+}
+
 .videoBanner__info > h1 {
   font-weight: 600;
   font-size: 50px;
   line-height: 65px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .videoBanner__info > h4 {
   font-weight: 400;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .videoBanner__info > button {
@@ -45,17 +51,26 @@
   border-radius: 10px;
 }
 .a > a {
-  color: #f7f7f7 !important;
+  color: #ffffff !important;
+  font-size: 18px;
+}
+.a > a :hover {
+  color: #c35448 !important;
+  font-size: 18px;
+}
+.b > a {
+  color: #ffffff !important;
   font-size: 18px;
 }
 .videoBanner__info--first {
-  background: #f20091;
-  color: #f7f7f7;
+  background: #ff6f5e;
+  color: #4bc6c7;
   border: none;
+  cursor: pointer;
 }
 
 .videoBanner__info--first:hover {
-  background: #d90082;
+  background: #ff6f5e;
 }
 
 .videoBanner__info--second {
@@ -63,6 +78,7 @@
   background-color: transparent;
   border-color: #f7f7f7;
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
 .videoBanner__info--second:hover {

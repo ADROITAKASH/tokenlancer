@@ -1,7 +1,7 @@
 import React from 'react';
 import './BrowseJobs.css';
-import Feed from './Feed'
 import Menus from './Menus';
+import Feed from './Feed'
 
 function BrowseJobs() {
   return (
@@ -11,5 +11,5 @@ function BrowseJobs() {
     </div>
   )
 }
-
+ 
 export default BrowseJobs

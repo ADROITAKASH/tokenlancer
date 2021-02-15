@@ -12,6 +12,10 @@ import Login from './Login';
 import Signup from './Signup';
 import PostJob from './PostJob';
 import Recruitment from './Recruitment';
+import Proposals from './Freelancer/Proposals';
+import Contract from './Freelancer/Contract';
+import HiProposals from './Hirer/HiProposals';
+import HiContract from './Hirer/HiContract';
 
 function App() {
   return (
@@ -20,6 +24,18 @@ function App() {
         <Switch>
           <Route path="/browse-job">
             <BrowseJobs />
+          </Route>
+          <Route path="/contract">
+            <Contract />
+          </Route>
+          <Route path="/Hicontract">
+            <HiContract />
+          </Route>
+          <Route path="/proposals">
+            <Proposals/>
+          </Route>
+          <Route path="/Hiproposals">
+            <HiProposals/>
           </Route>
           <Route path="/my-job">
             <MyJob />

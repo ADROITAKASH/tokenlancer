@@ -13,14 +13,10 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jsonbin.io/b/60274bc73b303d3d964fe63f/1', {
+    fetch('https://tokenlancer.uc.r.appspot.com/api/jobservice/', {
       method: 'GET',
-      headers: {
-        'secret-key': '$2b$10$m7Z.n9.aBJObcy8ZfKtQTey1aWzx9jxyMuijso7H2rIvuA3x4iWoG'
-      }
-    })
-      // fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
+      redirect: 'follow'
+    }).then(response => response.json())
       .then(user => this.setState({ jobs: user }))
   }
 
@@ -35,6 +31,6 @@ class Feed extends React.Component {
     );
   }
 }
-
+ 
 export default Feed;
 

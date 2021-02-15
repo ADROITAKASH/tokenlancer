@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProjectList.css';
-import {ProjectContainer} from '../ProjectContainer/ProjectContainer';
+import ProjectContainer from '../ProjectContainer/ProjectContainer';
 
 export const ProjectList=(props)=>(
     <div className='project-list'>
@@ -9,4 +9,4 @@ export const ProjectList=(props)=>(
         // <div key={job.id}>{job.name}</div>
     ))}
     </div>
-);
+); 

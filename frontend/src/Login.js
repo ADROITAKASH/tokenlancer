@@ -1,6 +1,7 @@
 import React from 'react';
-// import { Link, useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import './Login.css';
+import user_name from './user_name'
 import Header from './Header';
 
 
@@ -18,16 +19,45 @@ class Login extends React.Component {
     }
 
     handleSubmit = (event) => {
-
-        // const history = useHistory();
-        // history.push("/browse-job");
-
-        fetch('https://webhook.site/2491e7cf-0432-4f89-bd36-6c0d38cb0d57', {
+        fetch('https://tokenlancer.uc.r.appspot.com/api/accountservice/', {  //  /api/accountservice/
             method: 'POST',
-            // We convert the React state to JSON and send it as the POST body
             body: JSON.stringify(this.state)
         }).then(function (response) {
             console.log(response)
+            // return history.push('/browse-job')
+            // if (response =='Username already taken') {
+            //     let error = document.getElementById('error_msg')
+            //     error.innerText = `Username already taken`
+            // let red = document.getElementById('username')
+            // red.classList.add("red");
+            // error.innerText = `Username already taken`
+            // }
+            // else if (response =='Posted Successfully') {
+            //     <Redirect to={/browse-job} />
+            // }
+            return response.json();
+        });
+
+        event.preventDefault();
+    }
+
+    handleSignup = (event) => {
+        fetch('https://tokenlancer.uc.r.appspot.com/api/accountservice/', {  //  /api/accountservice/
+            method: 'POST',
+            body: JSON.stringify(this.state)
+        }).then(function (response) {
+            console.log(response)
+            // return history.push('/browse-job')
+            // if (response =='Username already taken') {
+            //     let error = document.getElementById('error_msg')
+            //     error.innerText = `Username already taken`
+            // let red = document.getElementById('username')
+            // red.classList.add("red");
+            // error.innerText = `Username already taken`
+            // }
+            // else if (response =='Posted Successfully') {
+            //     <Redirect to={/browse-job} />
+            // }
             return response.json();
         });
 
@@ -39,30 +69,43 @@ class Login extends React.Component {
             <div>
                 <Header />
                 <div className='signin'>
+                    {console.log("username is ......"+user_name)}
                     <form onSubmit={this.handleSubmit}>
-                        <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Login</h2>
-                        <button class="submit" type="submit" value="Submit"><span class="entypo-lock"><i class="fa fa-lock"></i></span></button>
-                        <span class="entypo-user inputUserIcon">
-                            <i class="fa fa-user"></i>
-                        </span>
-                        <input type="text" class="user" placeholder="Name" value={this.state.value} name="name" onChange={this.handleChange} />
-                        <span class="entypo-key inputPassIcon">
-                            <i class="fa fa-key"></i>
-                        </span>
-                        <input type="text" class="pass" placeholder="Username" value={this.state.value} name="username" onChange={this.handleChange} />
+                        <h2 className='heading'><span className="entypo-login"><i className="fa fa-sign-in"></i></span> Signin</h2>
+                        <div className='input'>
+                            <div className='left'>
+                                <div className='material-textbox'>
+                                    <input type="text" value={this.state.value} name="name" id='name'onChange={this.handleChange} required />
+                                    <label>Name</label>
+                                </div>
+                                <div className='user'>
+                                    <div className='material-textbox' id='username'>
+                                        <input type="text" value={this.state.value} name="username" onChange={this.handleChange} required />
+                                        <label>Username</label>
+                                    </div>
+                                </div>
+                                <div id="error_msg"></div>
+                            </div>
+                            <button className="submit sub-one" type="submit" value="Submit"><span className="entypo-lock"><i className="fa fa-lock"></i></span></button>
+
+                        </div>
                     </form>
-                    <div class='vl'></div>
-                    <form action="">
-                        <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Signup</h2>
-                        <button class="submit"><span class="entypo-lock"><i class="fa fa-lock"></i></span></button>
-                        <span class="entypo-user inputUserIcon">
-                            <i class="fa fa-user"></i>
-                        </span>
-                        <input type="text" class="user" placeholder="Name" />
-                        <span class="entypo-key inputPassIcon">
-                            <i class="fa fa-key"></i>
-                        </span>
-                        <input type="text" class="pass" placeholder="Username" />
+
+                    {/* <div className='vl'></div> */}
+
+                    <form onSubmit={this.handleSignup}>
+                        <h2 className='heading'><span className="entypo-login"><i className="fa fa-sign-in"></i></span> Signup</h2>
+                        <div className='input'>
+                            <div className='left'>
+                                <div >
+                                    <div className='material-textbox'>
+                                        <input type="text" value={this.state.value} name="username" onChange={this.handleChange} required />
+                                        <label>Username</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button className="submit" type="submit" value="Submit"><span className="entypo-lock"><i className="fa fa-lock"></i></span></button>
+                        </div>
                     </form>
                 </div>
             </div>

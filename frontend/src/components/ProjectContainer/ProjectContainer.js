@@ -1,49 +1,86 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 import './ProjectContainer.css';
 
-export const ProjectContainer = (props) => (
-    <div className='project' key={props.job.jobId}>
-        <div className="project__bottom">
-            <h2 style={{ textAlign: 'center' }} >{props.job.title}</h2> {/* name for Job */}
+class ProjectContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tokensPerHour: '',
+            totalHours: '',
+            description: ''
+        };
+    }
 
-            <h3 style={{ color: "#00000051", textAlign:'center' }}>skills</h3> {/* name for Job */}
-            <h4>{props.job.skills}</h4> {/* skills required */}
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
 
-            <h4><strong>Work Time:</strong> {props.job.hours} <em>Hrs</em></h4> {/* estimated time */}
+    handleSubmit = (event) => {
+        alert('A form was submitted: ' + this.state);
 
-            <h4><strong>Tokens:</strong> {props.job.tokensperhour} <em>/hr</em></h4> {/* tokens per hour */}
+        fetch('https://webhook.site/2491e7cf-0432-4f89-bd36-6c0d38cb0d57', {
+            method: 'POST',
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify(this.state)
+        })
+            .then(function (response) {
+                console.log(response)
+                return response.json();
+            });
 
-            <Popup
-                trigger={<button class="bubbly-button button"> Open Modal </button>}
-                modal
-                nested
-            >
-                
-                {close => (
-                    <div className="modal">
-                        <button className="close" onClick={close}>
-                            &times;
-        </button>
-                        <div className="header"> {props.job.title} </div>
-                        <div className="content">
-                            {props.job.description}
-        </div>
-                        <div className="actions">
-                            <button
-                                class="bubbly-button button"
-                                onClick={() => {
-                                    console.log('modal closed ');
-                                    close();
-                                }}
-                            >
-                                close modal
-          </button>
-                        </div>
+        event.preventDefault();
+    }
+
+    render() {
+        return (
+            <div className='project' key={this.props.job.jobId}>
+                <div className="project__bottom">
+                    <h3 style={{ textAlign: 'left' }} >{this.props.job.hirer}</h3> {/* name for hirer */}
+                    <h2 style={{ textAlign: 'center' }} >{this.props.job.title}</h2> {/* name for Job */}
+                    <div className='background'>
+                        <h3>{this.props.job.description}</h3> {/* Job description*/}
                     </div>
-                )}
-            </Popup>
-        </div>
-    </div>
-);
+                    <h4>Skills: {this.props.job.skills}</h4> {/* skills required */}
+                    <Popup
+                        trigger={<button class="bubbly-button button"> ✔ Apply </button>}
+                        modal
+                        nested
+                    >
+
+                        {close => (
+                            <div className='conflict'>
+                                <div className="modals">
+                                    <button className="close" onClick={close}>
+                                        &times;
+                                </button>
+                                    <div className="header"> {this.props.job.title} </div>
+                                    <div className="content">
+                                        <form onSubmit={this.handleSubmit} className='form'>
+                                            <div className='material-textbox formItems' id='tokensPerHour'>
+                                                <input type="text" value={this.state.value} name="tokensPerHour" onChange={this.handleChange} required />
+                                                <label>Price of hourly tokens</label>
+                                            </div>
+                                            <div className='material-textbox formItems' id='totalHours'>
+                                                <input type="text" value={this.state.value} name="totalHours" onChange={this.handleChange} required />
+                                                <label>Approximate no. of hours to finish</label>
+                                            </div>
+                                            <div className='material-textbox formItems' id='description'>
+                                                <input type="text" value={this.state.value} name="description" onChange={this.handleChange} required />
+                                                <label>Tell me about yourself</label>
+                                            </div>
+
+                                            <input type="submit" value="Submit" className='bubbly-button button' />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        )}
+                    </Popup>
+                </div>
+            </div>
+        );
+    }
+}
+export default ProjectContainer;

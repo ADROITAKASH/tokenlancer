@@ -1,0 +1,17 @@
+.tab {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+.nav-pills .nav-link.active{
+color: #ffffff !important;
+background-color: #FF6F5E !important;
+}
+
+.tab > h4 > a{
+  color: #FF6F5E !important;
+}
+.nav-item > a{
+  color: #FF6F5E !important;
+}

@@ -11,9 +11,6 @@ function Projects() {
                 Here are some of our most popular projects:</h3>
             </div>
             <Feed/>
-            <div className="projects__more">
-                <button>See More</button>
-            </div>
         </div>
     )
 }

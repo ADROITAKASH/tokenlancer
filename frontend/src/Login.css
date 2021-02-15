@@ -21,6 +21,10 @@
   margin-right: 5px;
 }
 
+.heading {
+  padding-bottom: 15px;
+}
+
 .signin {
   display: flex;
   justify-content: space-around;
@@ -45,57 +49,88 @@ form {
   height: auto;
 }
 
-input {
-  padding: 16px;
-  border-radius: 7px;
-  border: 0px;
-  background: rgb(235, 235, 235);
-  display: block;
-  margin: 15px;
-  width: 300px;
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-  height: 54px;
-}
-
-input:focus {
-  outline-color: rgba(0, 0, 0, 0);
-  background: #F2F2F2;
-  border: .5px solid #e74c3c;
-  color: #e74c3c;
+.user {
+  padding-top: 15px;
 }
 
 .submit {
-  float: right;
-  height: 121px;
-  width: 50px;
+  width: 100px !important;
   border: 0px;
-  background: #e74c3c;
-  border-radius: 7px;
-  padding: 10px;
+  background: #ff6f5e;
+  border-radius: 10px;
+  padding-right: 22px;
+  padding-left: 22px;
   color: white;
   font-size: 22px;
-  margin-top: 15px;
+  margin-left: 15px;
 }
 
-.inputUserIcon {
+.sub-one {
+  margin-bottom: 11px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+#name:-webkit-autofill {
+  background-color: #ffffff !important;
+}
+#error_msg {
+  color: red;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.material-textbox {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+    margin-bottom: 0px;
+}
+.material-textbox input {
+  border: 1px solid #ddd;
+  padding: 16px;
+  font-size: 18px;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.red > input {
+  border: 2px solid #ff0000 !important;
+}
+.red > input:focus {
+  border: 2px solid #ff0000 !important;
+}
+
+.material-textbox input:focus {
+  border: 2px solid #167ffc;
+  outline: none;
+  width: 100%;
+}
+.material-textbox input:focus + label,
+.material-textbox input:valid + label {
+  margin-top: -9px;
+  margin-left: 9px;
+  color: #167ffc;
+  font-size: 14px;
+  padding: 0 6px;
+  background: white;
+}
+.material-textbox label {
   position: absolute;
-  top: 68px;
-  right: 80px;
-  color: #e74c3c;
-}
-
-.inputPassIcon {
-  position: absolute;
-  top: 136px;
-  right: 80px;
-  color: #e74c3c;
-}
-
-input::-webkit-input-placeholder {
-  color: rgb(0, 0, 0);
-}
-
-input:focus::-webkit-input-placeholder {
-  color: #e74d3cb4;
+  margin: 16px;
+  background: white;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease;
+  font-size: large;
 }

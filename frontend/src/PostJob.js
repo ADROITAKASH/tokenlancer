@@ -1,16 +1,14 @@
 import React from 'react';
 import './PostJob.css';
-import Menus from './Menus';
+import Menus from './Menus2';
 
 class PostProject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title:'',
+      title: '',
       description: '',
-      skills:'',
-      hours:'',
-      tokensperhour:''
+      skills: ''
     };
   }
 
@@ -40,29 +38,32 @@ class PostProject extends React.Component {
         <Menus />
         <h2>Tell us what you need done</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            <h3>Choose a name for the Job</h3>
-            <input type="text" value={this.state.value} name="title" onChange={this.handleChange} />
-          </label>
-          <label>
-            <h3>Tell us more about the Job</h3>
-            Start with a bit about yourself or your business, and include an overview of what you need done.
-          <input type="text" value={this.state.value} name="description" onChange={this.handleChange} />
-          </label>
-          <label>
-            <h3>What skills are required?</h3>
-            Separate the skills using comma.<br></br> (eg: React, html, css)
-          <input type="text" value={this.state.value} name="skills" onChange={this.handleChange} />
-          </label>
-          <label>
-            <h3>What is your estimated time period?</h3>
-            <input type="text" value={this.state.value} name="hours" onChange={this.handleChange} />
-          </label>
-          <label>
-            <h3>What is your estimated Tokens per Hour?</h3>
-            <input type="text" value={this.state.value} name="tokensperhour" onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+          <h3>Choose a name for the Job</h3>
+
+          <div className='material-textbox' id='title'>
+            <input type="text" value={this.state.value} name="title" onChange={this.handleChange} required />
+            <label>Price of hourly tokens</label>
+          </div>
+
+
+          <h3>Tell us more about the Job</h3>
+          <h4>Start with a bit about yourself or your business, and include an overview of what you need done.</h4>
+
+          <div className='material-textbox' id='description'>
+            <input type="text" value={this.state.value} name="description" onChange={this.handleChange} required />
+            <label>Approximate no. of hours to finish</label>
+          </div>
+
+
+          <h3>What skills are required?</h3>
+          <h4>Separate the skills using comma.<br></br> (eg: React, html, css)</h4>
+
+          <div className='material-textbox' id='skills'>
+            <input type="text" value={this.state.value} name="skills" onChange={this.handleChange} required />
+            <label>Tell me about yourself</label>
+          </div>
+
+          <input type="submit" value="Post" className='bubbly-button button' />
         </form>
       </div>
     );

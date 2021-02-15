@@ -9,16 +9,13 @@ function Header() {
                 <Link to="/">
                     <img
                         className="header__logo"
-                        src="https://i.ibb.co/SyXXSDG/logo.png"
+                        src="https://i.ibb.co/GJ7fLq4/tl-logo.png"
                         alt="logo"
                     />
                 </Link>
             </div>
 
             <div className="header__right">
-                {/* <h4><Link to="/browse-job">Fck In</Link></h4>
-                <h4><Link to="/login">Log In</Link></h4>
-                <h4><Link to="/signup">Sign Up </Link></h4> */}
                 <button><Link to="/browse-job">Fck In</Link></button>
             </div>
 

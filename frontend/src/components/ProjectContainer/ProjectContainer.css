@@ -1,14 +1,29 @@
 .project {
-  margin: 3%;
-  max-width: 300px;
-
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin: 10px;
+  width: 550px;
+  background-color: #ffffff;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  /* box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75); */
+  box-shadow: 0px 15px 30px #7b7b7b15;
   transition: transform 100ms ease-in;
   cursor: pointer;
 }
 
+.background {
+  background-color: aliceblue;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.project__bottom > .background > h3 {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 10px;
+}
 /* .project > button {
   position: relative;
   display: none;
@@ -48,17 +63,46 @@ button:hover {
   padding-left: 15px;
 }
 
-.modal {
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: auto;
+  padding: 5px;
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+
+.modals {
   padding: 10px;
   font-size: 20px;
-  /* height: min-content(300px); */
   min-height: 300px;
 }
 .popup-content {
   border-radius: 10px !important;
 }
 
-.modal > .header {
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formItems{
+  padding: 10px;
+}
+
+.modals > .header {
   width: 100%;
   font-size: 30px !important;
   font-weight: bold;
@@ -67,17 +111,17 @@ button:hover {
   text-align: center;
   padding: 5px;
 }
-.modal > .content {
+.modals > .content {
   width: 100%;
   padding: 20px 5px;
 }
-.modal > .actions {
+.modals > .actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
 }
-.modal > .close {
+.modals > .close {
   cursor: pointer;
   position: absolute;
   display: block;
@@ -102,9 +146,7 @@ button:hover {
   display: inline-block;
   font-size: 1em;
   padding: 1em 2em;
-  margin-right: 50px;
-  margin-left: 50px;
-  margin-bottom: 10px;
+  justify-self: center;
   -webkit-appearance: none;
   appearance: none;
   background-color: #141414;
@@ -200,4 +242,8 @@ button:hover {
       110% 10%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
+}
+
+.material-textbox {
+  margin-bottom: 15px;
 }
