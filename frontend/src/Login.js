@@ -22,6 +22,10 @@ class Login extends React.Component {
     handleSubmit = (event) => {
         fetch('https://tokenlancer.uc.r.appspot.com/api/accountservice/', {  //  /api/accountservice/
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             body: JSON.stringify(this.state)
         }).then(function (response) {
             console.log(response)
@@ -38,8 +42,13 @@ class Login extends React.Component {
             // }
             return response.json();
         })
-            .catch((error) => {
-                console.log(error)
+            .catch((e) => {
+                console.log(e)
+                let error = document.getElementById('error_msg')
+                error.innerText = `Username already taken`
+                let red = document.getElementById('username')
+                red.classList.add("red");
+                error.innerText = `Username already taken`
             });;
 
         event.preventDefault();

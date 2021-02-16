@@ -55,6 +55,19 @@ form {
 
 .submit {
   width: 100px !important;
+  height: 60px !important;
+  border: 0px;
+  background: #ff6f5e;
+  border-radius: 10px;
+  padding-right: 22px;
+  padding-left: 22px;
+  color: white;
+  font-size: 22px;
+  margin-left: 15px;
+}
+.sub-one {
+  width: 100px !important;
+  height: 135px !important;
   border: 0px;
   background: #ff6f5e;
   border-radius: 10px;
