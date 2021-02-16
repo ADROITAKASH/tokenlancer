@@ -1,7 +1,8 @@
 import React from 'react';
-import './HiProposalFeed.css';
-import {Card} from './HiCard';
+// import './HiProposalFeed.css';
+import {HiCard} from './HiCard';
 import { Search } from '../components/search/search';
+import user_name from '../user_name'
 
 class ProposalFeed extends React.Component {
   constructor() {
@@ -14,11 +15,8 @@ class ProposalFeed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jsonbin.io/b/602a0e106b568373f8c1cb6e/3', {
-      method: 'GET',
-      headers: {
-        'secret-key': '$2b$10$NyrQqdB0SiEibAB3zubFUedM.YLf.HT5xbqMH4ZO9jXBC3zLpUauq'
-      }
+    fetch(`https://tokenlancer.uc.r.appspot.com/api/accountservice/${user_name}/hirer/proposals`, {
+      method: 'GET'
     })
       // fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
@@ -27,14 +25,11 @@ class ProposalFeed extends React.Component {
 
   render() {
     const { jobs, search } = this.state;
-    const filterdJobs = jobs.filter(job => (job.title.toLowerCase().includes(search.toLowerCase())));
+    const filterdJobs = jobs.filter(job => (job.tokenlancer.toLowerCase().includes(search.toLowerCase())));
     return (
-      <div className='ProposalFeed'>
-        <Search placeholder='search jobs' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
-        {console.log(filterdJobs)}
-        {console.log(this.state.filter)}
-        {console.log(this.state.search)}
-        <Card jobs={filterdJobs}></Card>
+      <div className='ProposalFeed' style={{ padding: ' 3rem' }}>
+        <Search placeholder='tokenlancer' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
+        <HiCard jobs={filterdJobs}></HiCard>
       </div>
     );
   }

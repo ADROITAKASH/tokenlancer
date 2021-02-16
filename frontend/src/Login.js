@@ -1,8 +1,9 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
 import './Login.css';
 import user_name from './user_name'
 import Header from './Header';
+
+
 
 
 class Login extends React.Component {
@@ -36,7 +37,10 @@ class Login extends React.Component {
             //     <Redirect to={/browse-job} />
             // }
             return response.json();
-        });
+        })
+            .catch((error) => {
+                console.log(error)
+            });;
 
         event.preventDefault();
     }
@@ -69,13 +73,12 @@ class Login extends React.Component {
             <div>
                 <Header />
                 <div className='signin'>
-                    {console.log("username is ......"+user_name)}
                     <form onSubmit={this.handleSubmit}>
                         <h2 className='heading'><span className="entypo-login"><i className="fa fa-sign-in"></i></span> Signin</h2>
                         <div className='input'>
                             <div className='left'>
                                 <div className='material-textbox'>
-                                    <input type="text" value={this.state.value} name="name" id='name'onChange={this.handleChange} required />
+                                    <input type="text" value={this.state.value} name="name" id='name' onChange={this.handleChange} required />
                                     <label>Name</label>
                                 </div>
                                 <div className='user'>

@@ -9,8 +9,13 @@
 } */
 .project-list {
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-
 }
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

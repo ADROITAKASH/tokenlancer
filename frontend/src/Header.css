@@ -17,6 +17,14 @@
   align-items: center;
 }
 
+.header__right > button > a {
+  color: white !important;
+}
+
+.header__right > button {
+  border-radius: 10px;
+}
+
 .header__left > h4 {
   margin-left: 15px;
   font-weight: 400;
@@ -29,12 +37,11 @@
   padding: 15px;
 }
 
-.header__right {
+.header_right {
   margin-right: 50px;
 }
 
 .header__right > h4 {
-  margin-right: 25px;
   font-weight: 400;
 }
 
@@ -42,8 +49,12 @@
   text-decoration: none;
 }
 
+.headerRight{
+  display: flex;
+}
+
 .header__right > button {
-  background-color: #fc8c14; /* Orange */
+  background-color: #41C3C4; /* Orange */
   border: none;
   color: white;
   padding: 8px 18px;

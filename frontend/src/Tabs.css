@@ -10,7 +10,8 @@ background-color: #FF6F5E !important;
 }
 
 .tab > h4 > a{
-  color: #FF6F5E !important;
+  color: #ffffff !important;
+  background-color: #212121 !important;
 }
 .nav-item > a{
   color: #FF6F5E !important;

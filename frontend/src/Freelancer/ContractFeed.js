@@ -2,6 +2,7 @@ import React from 'react';
 // import './ContractFeed.css';
 import {ConCard} from './ConCard';
 import { Search } from '../components/search/search';
+import user_name from '../user_name'
 
 class ContractFeed extends React.Component {
   constructor() {
@@ -14,26 +15,19 @@ class ContractFeed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jsonbin.io/b/602a0e106b568373f8c1cb6e', {
-      method: 'GET',
-      headers: {
-        'secret-key': '$2b$10$NyrQqdB0SiEibAB3zubFUedM.YLf.HT5xbqMH4ZO9jXBC3zLpUauq'
-      }
+    fetch(`https://tokenlancer.uc.r.appspot.com/api/accountservice/${user_name}/tokenlancer/contracts`, {
+      method: 'GET'
     })
-      // fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(user => this.setState({ jobs: user }))
   }
 
   render() {
     const { jobs, search } = this.state;
-    const filterdJobs = jobs.filter(job => (job.title.toLowerCase().includes(search.toLowerCase())));
+    const filterdJobs = jobs.filter(job => (job.hirer.toLowerCase().includes(search.toLowerCase())));
     return (
       <div className='ContractFeed'>
         <Search placeholder='search jobs' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
-        {console.log(filterdJobs)}
-        {console.log(this.state.filter)}
-        {console.log(this.state.search)}
         <ConCard jobs={filterdJobs}></ConCard>
       </div>
     );

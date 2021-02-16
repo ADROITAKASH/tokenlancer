@@ -20,7 +20,7 @@ class ConCards extends React.Component {
           <div className='background'>
             <h3>{this.props.job.description}</h3> {/* Job description*/}
           </div>
-          <h4>Skills: {this.props.job.skills}</h4> {/* skills required */}
+          {/* <h4>Skills: {this.props.job.skills}</h4> */}
           <button class="bubbly-button button"> Complete </button>
         </div>
       </div>

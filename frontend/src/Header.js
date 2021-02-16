@@ -14,10 +14,15 @@ function Header() {
                     />
                 </Link>
             </div>
-
-            <div className="header__right">
-                <button><Link to="/browse-job">Fck In</Link></button>
+            <div className='headerRight'>
+                <div className="header__right">
+                    <button><Link to="/login">Credential Login</Link></button>
+                </div>
+                <div className="header__right">
+                    <button><Link to="/browse-job">Non Credential Login</Link></button>
+                </div>
             </div>
+
 
         </div >
     )

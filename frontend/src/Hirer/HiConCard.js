@@ -1,11 +1,11 @@
 import React from 'react';
 // import './ConCard.css';
-import ConCards from './HiConCards';
+import HiConCards from './HiConCards';
 
-export const ConCard = (props) => (
+export const HiConCard = (props) => (
   <div className='project-list'>
     {props.jobs.map(job => (
-      <ConCards job={job}></ConCards>
+      <HiConCards job={job}></HiConCards>
     ))}
   </div>
 ); 
