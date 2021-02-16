@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Header';
 import VideoBanner from './VideoBanner';
 import Features from './Features';
-// import Projects from './Projects';
+import Projects from './Projects';
 import Footer from './Footer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseJobs from './BrowseJobs';
@@ -56,7 +56,7 @@ function App() {
             <Header />
             <VideoBanner />
             <Features />
-            {/* <Projects /> */}
+            <Projects />
             <Footer />
           </Route>
         </Switch>

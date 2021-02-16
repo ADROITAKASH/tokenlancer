@@ -27,7 +27,7 @@ class ContractFeed extends React.Component {
     const filterdJobs = jobs.filter(job => (job.hirer.toLowerCase().includes(search.toLowerCase())));
     return (
       <div className='ContractFeed'>
-        <Search placeholder='search jobs' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
+        <Search placeholder='hirer' onchange={(e) => (this.setState({ search: e.target.value }))}></Search>
         <ConCard jobs={filterdJobs}></ConCard>
       </div>
     );
