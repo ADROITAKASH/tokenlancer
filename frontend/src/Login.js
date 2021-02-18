@@ -1,7 +1,10 @@
 import React from 'react';
 import './Login.css';
-import user_name from './user_name'
+// import user_name from './user_name'
 import Header from './Header';
+
+import { actionTypes } from './reducer';
+import { useStateValue } from './StateProvider';
 
 
 
@@ -29,21 +32,16 @@ class Login extends React.Component {
             body: JSON.stringify(this.state)
         }).then(function (response) {
             console.log(response)
-            // return history.push('/browse-job')
-            // if (response =='Username already taken') {
-            //     let error = document.getElementById('error_msg')
-            //     error.innerText = `Username already taken`
-            // let red = document.getElementById('username')
-            // red.classList.add("red");
-            // error.innerText = `Username already taken`
-            // }
-            // else if (response =='Posted Successfully') {
-            //     <Redirect to={/browse-job} />
-            // }
             return response.json();
         })
             .catch((e) => {
                 console.log(e)
+
+                // dispatch({
+                //     type: actionTypes.SET_USER,
+                //     user_name: this.state.username,
+                // });
+
                 let error = document.getElementById('error_msg')
                 error.innerText = `Username already taken`
                 let red = document.getElementById('username')
@@ -55,23 +53,20 @@ class Login extends React.Component {
     }
 
     handleSignup = (event) => {
+        const [state, dispatch] = useStateValue();
         fetch('https://tokenlancer.uc.r.appspot.com/api/accountservice/', {  //  /api/accountservice/
             method: 'POST',
             body: JSON.stringify(this.state)
         }).then(function (response) {
             console.log(response)
-            // return history.push('/browse-job')
-            // if (response =='Username already taken') {
-            //     let error = document.getElementById('error_msg')
-            //     error.innerText = `Username already taken`
-            // let red = document.getElementById('username')
-            // red.classList.add("red");
-            // error.innerText = `Username already taken`
-            // }
-            // else if (response =='Posted Successfully') {
-            //     <Redirect to={/browse-job} />
-            // }
+            // dispatch({
+            //     type: actionTypes.SET_USER,
+            //     user_name: result.user,
+            // });
+            // history.push('/browse-job')
             return response.json();
+        }).catch((e) => {
+            console.log(e)
         });
 
         event.preventDefault();
